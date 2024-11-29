@@ -15,9 +15,9 @@ public class RoleBasedAuthenticationSuccessHandler extends SimpleUrlAuthenticati
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         System.out.println("authority :::" + authorities);
         if (authorities.contains(new SimpleGrantedAuthority("ROLE_ADMIN"))) {
-            return "/auth/dashboard";
+            return "/index";
         } else {
-            return "/auth/login";
+            return "/index";
         }
     }
 }

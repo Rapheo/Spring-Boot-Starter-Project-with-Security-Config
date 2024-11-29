@@ -11,6 +11,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 public class AdminPanelController {
     @GetMapping("/dashboard")
     public String getAdminPanel() {
-        return "AdminPanel/mise/admin-dashboard";
+        return null;
     }
 }

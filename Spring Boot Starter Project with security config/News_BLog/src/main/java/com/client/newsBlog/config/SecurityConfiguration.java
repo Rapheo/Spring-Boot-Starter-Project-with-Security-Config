@@ -16,8 +16,8 @@ public class SecurityConfiguration {
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
         http.authorizeHttpRequests(configurer ->
                 configurer
-                        .requestMatchers("/auth/**").permitAll()
-                        .requestMatchers("/auth/dashboard").permitAll()
+                        .requestMatchers("index").permitAll()
+
 
 //                        .requestMatchers(mvcMatcherBuilder.pattern("/auth/**")).hasRole("ADMIN")
 
@@ -31,9 +31,9 @@ public class SecurityConfiguration {
         http
                 .formLogin(form ->
                         form
-                                .loginPage("/auth/loginUser")
+                                .loginPage("/login")
                                 .successHandler(new RoleBasedAuthenticationSuccessHandler())
-                                .failureUrl("/auth/login?loginError")
+                                .failureUrl("/login?loginError")
                                 .permitAll()
                 );
 //                .logout(logout ->
